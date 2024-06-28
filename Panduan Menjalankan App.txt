@@ -1,0 +1,24 @@
+NIM   : 10122005
+Nama  : Zulfi Fadilah Azhar
+Kelas : IF-1
+
+Cara menjalankan program
+------------------------
+
+Saya membuat 2 jenis program, yaitu menggunakan Python Jupyter Notebook dan tampilan website menggunakan Python Streamlit.
+
+Website streamlit dapat diakses secara online dengan mengunjungi link dibawah ini
+
+https://rvg-distribusi-uniform-diskrit.streamlit.app/
+
+--------------------------------------------------------------------
+
+atau dapat melihat dokumentasi lengkap di GitHub
+
+https://github.com/ZulfiFazhar/RVG-Distribusi_Uniform_Diskrit.git
+
+--------------------------------------------------------------------
+
+Cara menjalankan app secara local di laptop:
+1. Untuk pertama kali jalankan file install_app.sh
+2. Jika sudah muncul folder 'env' selanjutnya hanya perlu menjalankan file run_app.sh
