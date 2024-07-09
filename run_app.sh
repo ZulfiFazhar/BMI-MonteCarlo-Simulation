@@ -1,2 +1,2 @@
 source ./env/Scripts/activate
-streamlit run testing-simulasi.py
+streamlit run testing-simulasi.ipynb
