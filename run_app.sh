@@ -1,2 +1,2 @@
 source ./env/Scripts/activate
-streamlit run dashboard.py
+streamlit run testing-simulasi.py
