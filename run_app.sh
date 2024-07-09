@@ -1,2 +1,3 @@
 source ./env/Scripts/activate
-streamlit run testing-simulasi.ipynb
+streamlit run dashboard.py
+
