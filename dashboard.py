@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+
 st.title("SIMULASI BMI MONTE CARLO")
 #load data
 df = pd.read_csv('dataset.csv')
