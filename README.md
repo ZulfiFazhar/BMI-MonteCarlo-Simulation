@@ -10,7 +10,7 @@ Program ini melakukan simulasi Monte Carlo untuk Body Mass Index (BMI) Mahasiswa
 
 Program ini dapat diakses secara online melalui link dibawah ini
 
-[Simulasi Monte Carlo BMI](https://github.com/)
+[Simulasi Monte Carlo BMI](https://monte-carlo-simulation-kelompok-6.streamlit.app/)
 
 ## Cara menjalankan program secara lokal
 
