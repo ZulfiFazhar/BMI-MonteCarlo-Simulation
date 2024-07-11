@@ -126,6 +126,13 @@ def get_bmi_status(bmi):
 df_simulasi_bmi['Status BMI'] = df_simulasi_bmi['BMI'].apply(get_bmi_status)
 
 # --- Main Menu Tampilan ---
+st.header("Kelompok 6")
+st.write(f"""
+    - 10122003 - Andrian Baros
+    - 10122005 - Zulfi Fadilah Azhar
+    - 10122029 - Alif Vidya Kusumah
+""")
+
 st.title("Simulasi Sistem Body Mass Index (BMI)")
 st.write("Diketahui data tinggi dan berat badan 90 mahasiswa Informatika UNIKOM adalah sebagai berikut.")
 df
