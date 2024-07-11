@@ -1,1 +1,18 @@
 # Simulasi Monte Carlo untuk Body Mass Index (BMI)
+
+## Kelompok 6
+
+- 10122003 - [Andrian Baros](https://github.com/andrianbaros)
+- 10122005 - [Zulfi Fadilah Azhar](https://github.com/ZulfiFazhar)
+- 10122029 - [Alif Vidya Kusumah](https://github.com/AlifViku)
+
+Program ini melakukan simulasi Monte Carlo untuk Body Mass Index (BMI) Mahasiswa.
+
+Program ini dapat diakses secara online melalui link dibawah ini
+
+[Simulasi Monte Carlo BMI](https://github.com/)
+
+## Cara menjalankan program secara lokal
+
+1. Jalankan file `install_app.sh`
+2. Setelah melakukan instalasi dari menjalankan file tersebut, selanjutnya hanya perlu menjalankan program `run_app.sh`

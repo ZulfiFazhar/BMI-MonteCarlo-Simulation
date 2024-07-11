@@ -6,7 +6,6 @@ df = pd.read_csv('dataset.csv')
 df.rename(columns={'Mahasiswa Ke-':'mahasiswa_ke', 'Tinggi Badan (cm)':'tinggi_badan', 'Berat Badan (Kg)':'berat_badan'}, inplace=True)
 
 # --- Pengolahan Data ---
-
 # Mengambil data mahasiswa dan tinggi badan dari df utama
 tinggi_badan = df[['mahasiswa_ke', 'tinggi_badan']]
 
@@ -57,8 +56,8 @@ def lcg_simulation(a, c, m, z0):
     zi = z0
     rows = []
 
-    # Menghasilkan 300 baris data
-    for _ in range(1, 301):
+    # Menghasilkan data
+    for _ in range(1, 201):
         zi_next = lcg(zi, a, c, m)
         ui = zi_next / m
         ui_100 = ui * 100
@@ -81,8 +80,8 @@ z0 = 10122005
 df_lcg = lcg_simulation(a, c, m, z0)
 
 # Index 100 data dari df simulasi lcg untuk simulasi monte carlo
-df_lcg_tb = df_lcg['Ui x100'].iloc[0:100]
-df_lcg_bb = df_lcg['Ui x100'].iloc[100:200].reset_index(drop=True)
+df_lcg_tb = df_lcg['Ui x100'].iloc[0:100].astype(int)
+df_lcg_bb = df_lcg['Ui x100'].iloc[100:200].astype(int).reset_index(drop=True)
 
 # Membuat dataframe baru yang menggabungkan tabel mahasiswa dan nilai acak lcg untuk simulasi
 df_simulasi_bmi = pd.concat([df_mahasiswa,df_lcg_tb, df_lcg_bb], axis=1)
@@ -110,14 +109,15 @@ df_simulasi_bmi['Berat Badan (Simulasi)'] = df_simulasi_bmi['Berat Badan (Acak)'
 
 # Mencari nilai BMI (Body Mass Index)
 df_simulasi_bmi['BMI'] = df_simulasi_bmi['Berat Badan (Simulasi)'] / (df_simulasi_bmi['Tinggi Badan (Simulasi)'] ** 2)
+df_simulasi_bmi['BMI'] = df_simulasi_bmi['BMI']
 
 # Fungsi untuk mencari Status BMI
 def get_bmi_status(bmi):
-    if bmi <= 17:
+    if bmi < 18:
         return 'Underweight'
-    elif 18 <= bmi <= 24:
+    elif 18 < bmi < 25:
         return 'Normal'
-    elif 25 <= bmi <= 30:
+    elif 25 < bmi < 31:
         return 'Overweight'
     else:
         return 'Obesitas'
@@ -194,6 +194,7 @@ with tab3:
         - $m$ = 2147483647
         """)
     st.table(df_simulasi_bmi)
+    # df_simulasi_bmi
 
 with tab4:
     st.subheader("Simulasi BMI dengan nilai acak LCG dinamis")
