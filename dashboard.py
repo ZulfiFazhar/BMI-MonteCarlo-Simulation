@@ -1,5 +1,15 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
+
+# fungsi untuk memasukkan histogram
+def plot_histogram(data, column, title):
+    plt.figure(figsize=(10, 6))
+    plt.hist(data[column], bins=20, color='skyblue', edgecolor='black')
+    plt.title(title)
+    plt.xlabel(column)
+    plt.ylabel('Frekuensi')
+    st.pyplot(plt)
 
 # --- load data ---
 df = pd.read_csv('dataset.csv')
@@ -125,6 +135,9 @@ def get_bmi_status(bmi):
 # Mencari Status BMI dengan menggunakan fungsi yang sudah dibuat
 df_simulasi_bmi['Status BMI'] = df_simulasi_bmi['BMI'].apply(get_bmi_status)
 
+
+
+
 # --- Main Menu Tampilan ---
 st.header("Kelompok 6")
 st.write(f"""
@@ -137,7 +150,10 @@ st.title("Simulasi Sistem Body Mass Index (BMI)")
 st.write("Diketahui data tinggi dan berat badan 90 mahasiswa Informatika UNIKOM adalah sebagai berikut.")
 df
 
+
+
 tab1, tab2, tab3, tab4 = st.tabs(["Studi Kasus Simulasi", "Membangkitkan Nilai Acak", "Simulasi Statis", "Simulasi Dinamis"])
+
 
 with tab1:
     st.header("Pengolahan Data")
@@ -202,6 +218,16 @@ with tab3:
         """)
     st.table(df_simulasi_bmi)
     # df_simulasi_bmi
+    
+    # histogram
+    st.write("Distribusi Tinggi Badan (Simulasi)")
+    plot_histogram(df_simulasi_bmi, 'Tinggi Badan (Simulasi)', 'Distribusi Tinggi Badan (Simulasi)')
+    
+    st.write("Distribusi Berat Badan (Simulasi)")
+    plot_histogram(df_simulasi_bmi, 'Berat Badan (Simulasi)', 'Distribusi Berat Badan (Simulasi)')
+    
+    st.write("Distribusi BMI (Simulasi)")
+    plot_histogram(df_simulasi_bmi, 'BMI', 'Distribusi BMI (Simulasi)')
 
 with tab4:
     st.subheader("Simulasi BMI dengan nilai acak LCG dinamis")
@@ -239,3 +265,13 @@ with tab4:
 
         st.write("Hasil Simulasi BMI:")
         st.table(df_simulasi_bmi)
+
+        #histogram
+        st.write("Distribusi Tinggi Badan (Simulasi)")
+        plot_histogram(df_simulasi_bmi, 'Tinggi Badan (Simulasi)', 'Distribusi Tinggi Badan (Simulasi)')
+        
+        st.write("Distribusi Berat Badan (Simulasi)")
+        plot_histogram(df_simulasi_bmi, 'Berat Badan (Simulasi)', 'Distribusi Berat Badan (Simulasi)')
+        
+        st.write("Distribusi BMI (Simulasi)")
+        plot_histogram(df_simulasi_bmi, 'BMI', 'Distribusi BMI (Simulasi)')
