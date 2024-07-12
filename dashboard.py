@@ -240,8 +240,8 @@ with tab3:
     st.write("BMI (Simulasi)")
     plot_histogram(df_simulasi_bmi, 'BMI', 'BMI (Simulasi)')
 
-    st.write("Distribusi Status BMI (Simulasi)")
-    plot_pie_chart(df_simulasi_bmi, 'Status BMI', 'Distribusi Status BMI (Simulasi)')
+    st.write("Status BMI (Simulasi)")
+    plot_pie_chart(df_simulasi_bmi, 'Status BMI', 'Status BMI (Simulasi)')
 
 with tab4:
     st.subheader("Simulasi BMI dengan nilai acak LCG dinamis")
@@ -291,4 +291,4 @@ with tab4:
         plot_histogram(df_simulasi_bmi, 'BMI', 'BMI (Simulasi)')
 
         st.write("Status BMI (Simulasi)")
-        plot_pie_chart(df_simulasi_bmi, 'Status BMI', 'Distribusi Status BMI (Simulasi)')
+        plot_pie_chart(df_simulasi_bmi, 'Status BMI', 'Status BMI (Simulasi)')
