@@ -11,6 +11,17 @@ def plot_histogram(data, column, title):
     plt.ylabel('Frekuensi')
     st.pyplot(plt)
 
+# fungsi untuk memasukkan pie chart
+def plot_pie_chart(data, column, title):
+    status_counts = data[column].value_counts()
+    labels = status_counts.index
+    sizes = status_counts.values
+
+    plt.figure(figsize=(8, 8))
+    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=['#ff9999','#66b3ff','#99ff99','#ffcc99'])
+    plt.title(title)
+    st.pyplot(plt)
+
 # --- load data ---
 df = pd.read_csv('dataset.csv')
 df.rename(columns={'Mahasiswa Ke-':'mahasiswa_ke', 'Tinggi Badan (cm)':'tinggi_badan', 'Berat Badan (Kg)':'berat_badan'}, inplace=True)
@@ -220,14 +231,17 @@ with tab3:
     # df_simulasi_bmi
     
     # histogram
-    st.write("Distribusi Tinggi Badan (Simulasi)")
-    plot_histogram(df_simulasi_bmi, 'Tinggi Badan (Simulasi)', 'Distribusi Tinggi Badan (Simulasi)')
+    st.write("Tinggi Badan (Simulasi)")
+    plot_histogram(df_simulasi_bmi, 'Tinggi Badan (Simulasi)', 'Tinggi Badan (Simulasi)')
     
-    st.write("Distribusi Berat Badan (Simulasi)")
-    plot_histogram(df_simulasi_bmi, 'Berat Badan (Simulasi)', 'Distribusi Berat Badan (Simulasi)')
+    st.write(" Berat Badan (Simulasi)")
+    plot_histogram(df_simulasi_bmi, 'Berat Badan (Simulasi)', 'Berat Badan (Simulasi)')
     
-    st.write("Distribusi BMI (Simulasi)")
-    plot_histogram(df_simulasi_bmi, 'BMI', 'Distribusi BMI (Simulasi)')
+    st.write("BMI (Simulasi)")
+    plot_histogram(df_simulasi_bmi, 'BMI', 'BMI (Simulasi)')
+
+    st.write("Distribusi Status BMI (Simulasi)")
+    plot_pie_chart(df_simulasi_bmi, 'Status BMI', 'Distribusi Status BMI (Simulasi)')
 
 with tab4:
     st.subheader("Simulasi BMI dengan nilai acak LCG dinamis")
@@ -267,11 +281,14 @@ with tab4:
         st.table(df_simulasi_bmi)
 
         #histogram
-        st.write("Distribusi Tinggi Badan (Simulasi)")
-        plot_histogram(df_simulasi_bmi, 'Tinggi Badan (Simulasi)', 'Distribusi Tinggi Badan (Simulasi)')
+        st.write("Tinggi Badan (Simulasi)")
+        plot_histogram(df_simulasi_bmi, 'Tinggi Badan (Simulasi)', ' Tinggi Badan (Simulasi)')
         
-        st.write("Distribusi Berat Badan (Simulasi)")
-        plot_histogram(df_simulasi_bmi, 'Berat Badan (Simulasi)', 'Distribusi Berat Badan (Simulasi)')
+        st.write("Berat Badan (Simulasi)")
+        plot_histogram(df_simulasi_bmi, 'Berat Badan (Simulasi)', ' Berat Badan (Simulasi)')
         
-        st.write("Distribusi BMI (Simulasi)")
-        plot_histogram(df_simulasi_bmi, 'BMI', 'Distribusi BMI (Simulasi)')
+        st.write("BMI (Simulasi)")
+        plot_histogram(df_simulasi_bmi, 'BMI', 'BMI (Simulasi)')
+
+        st.write("Distribusi Status BMI (Simulasi)")
+        plot_pie_chart(df_simulasi_bmi, 'Status BMI', 'Distribusi Status BMI (Simulasi)')
