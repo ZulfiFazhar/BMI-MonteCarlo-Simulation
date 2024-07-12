@@ -290,5 +290,5 @@ with tab4:
         st.write("BMI (Simulasi)")
         plot_histogram(df_simulasi_bmi, 'BMI', 'BMI (Simulasi)')
 
-        st.write("Distribusi Status BMI (Simulasi)")
+        st.write("Status BMI (Simulasi)")
         plot_pie_chart(df_simulasi_bmi, 'Status BMI', 'Distribusi Status BMI (Simulasi)')
