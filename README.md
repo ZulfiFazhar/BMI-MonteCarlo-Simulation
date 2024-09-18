@@ -14,5 +14,4 @@ Program ini dapat diakses secara online melalui link dibawah ini
 
 ## Cara menjalankan program secara lokal
 
-1. Jalankan file `install_app.sh`
-2. Setelah melakukan instalasi dari menjalankan file tersebut, selanjutnya hanya perlu menjalankan program `run_app.sh`
+Jalankan file `BMI-MonteCarlo-Simulation.bat`

@@ -19,6 +19,6 @@ https://github.com/ZulfiFazhar/RVG-Distribusi_Uniform_Diskrit.git
 
 --------------------------------------------------------------------
 
-Cara menjalankan app secara local di laptop:
-1. Untuk pertama kali jalankan file install_app.sh
-2. Jika sudah muncul folder 'env' selanjutnya hanya perlu menjalankan file run_app.sh
+Cara menjalankan app secara local:
+
+Jalankan file BMI-MonteCarlo-Simulation.bat
